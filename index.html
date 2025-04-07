@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Tic Tac Toe - College Project</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1><i class="fas fa-times-circle"></i> Tic Tac Toe <i class="far fa-circle"></i></h1>
+      <div class="game-controls">
+        <button id="settingsBtn"><i class="fas fa-cog"></i> Settings</button>
+        <button id="restartBtn"><i class="fas fa-redo"></i> Restart</button>
+      </div>
+    </header>
+
+    <div class="settings-panel" id="settingsPanel">
+      <h2>Game Settings</h2>
+      <div class="form-group"><label for="playerX">Player X Name:</label><input type="text" id="playerX" value="Player X"></div>
+      <div class="form-group"><label for="playerO">Player O Name:</label><input type="text" id="playerO" value="Player O"></div>
+      <div class="form-group"><label for="gameMode">Game Mode:</label>
+        <select id="gameMode">
+          <option value="human">Human vs Human</option>
+          <option value="computer">Human vs Computer</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="xColor">X Color:</label><input type="color" id="xColor" value="#e74c3c"></div>
+      <div class="form-group"><label for="oColor">O Color:</label><input type="color" id="oColor" value="#3498db"></div>
+      <button id="saveSettings">Save Settings</button>
+    </div>
+
+    <div class="game-info">
+      <div class="player-score" id="playerXScore"><span class="player-name">Player X</span><span class="score">0</span></div>
+      <div class="status" id="status">Player X's turn</div>
+      <div class="player-score" id="playerOScore"><span class="player-name">Player O</span><span class="score">0</span></div>
+    </div>
+
+    <div class="board-container">
+      <div class="board" id="board"></div>
+      <canvas id="winningLine" class="winning-line"></canvas>
+    </div>
+
+    <div class="move-history" id="moveHistory">
+      <h3>Move History</h3>
+      <div class="history-list"></div>
+    </div>
+  </div>
+
+  <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
+  <audio id="winSound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+  <audio id="drawSound" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-lose-2027.mp3"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
